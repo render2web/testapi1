@@ -1,0 +1,61 @@
+{
+  "kind": "collectionType",
+  "collectionName": "peliculas",
+  "info": {
+    "singularName": "pelicula",
+    "pluralName": "peliculas",
+    "displayName": "peliculas",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titulo": {
+      "type": "string"
+    },
+    "descripcion": {
+      "type": "text"
+    },
+    "pais": {
+      "type": "string"
+    },
+    "genero": {
+      "type": "string"
+    },
+    "director": {
+      "type": "string"
+    },
+    "guion": {
+      "type": "string"
+    },
+    "imagen": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "calificacion": {
+      "type": "integer"
+    },
+    "fechaEstreno": {
+      "type": "date"
+    },
+    "usuario": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "peliculas"
+    },
+    "enlaceUrl": {
+      "type": "uid",
+      "targetField": "titulo"
+    }
+  }
+}
